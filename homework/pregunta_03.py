@@ -21,3 +21,12 @@ def pregunta_03():
     Name: count, dtype: int64
 
     """
+    import pandas as pd
+
+    df = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+
+    count_by_letter = df['c1'].value_counts().sort_index()
+    count_by_letter.index.name = 'c1'
+    count_by_letter.name = 'count'
+
+    return count_by_letter
