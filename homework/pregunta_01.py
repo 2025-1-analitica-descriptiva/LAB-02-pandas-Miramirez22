@@ -14,3 +14,10 @@ def pregunta_01():
     40
 
     """
+    import pandas as pd
+
+    df = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+
+    num_rows = df.shape[0]
+
+    return num_rows
