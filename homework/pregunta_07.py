@@ -20,3 +20,10 @@ def pregunta_07():
     E    67
     Name: c2, dtype: int64
     """
+    import pandas as pd
+
+    df = pd.read_csv('files/input/tbl0.tsv', sep='\t')
+
+    sum_by_letter = df.groupby('c1')['c2'].sum()
+
+    return sum_by_letter
